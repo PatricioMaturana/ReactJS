@@ -1,19 +1,166 @@
-
-/*Contiene estilos base que afecta todas las páginas.*/
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: serif, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
 }
 
-.container-fluid {
-  margin-top: 10px;
-  margin-bottom: 10px;
+body{
+  margin: 5px;
+  text-shadow: 1px 1px 2px gray;
+}
+p{
+  font-size: 16px;
+  margin-bottom: 0px !important;
+}
+
+/*Establesco el tamaño y el número de columnas en una cuadrícula.*/
+.contenedor{
+  max-width: 1200px;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  /* oculto lo que queda fuera del .contenedor */
+  contain: paint;
+}
+
+.contenedor .item-contenedor{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap:15px;
+  grid-row-gap: 15px;
+}
+
+.input{
+  padding: 15px;
+}
+.boton, .btnBuscar, .btn-pagar{
+  background-color:#04AA6D;
+  border: none;
+  color: white;
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1px 1px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  box-shadow: 1px 2px  #999;
+  border-radius: 3px;
+}
+.btnBuscar{
+  padding: 2px 20px;
+}
+
+.boton:hover, .btnBuscar:hover,.restaCantidad:hover, .sumaCantidad:hover, .btn-pagar:hover, .btn-eliminar:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.boton:hover, .btnBuscar:hover, .restaCantidad:hover, .sumaCantidad:hover, .btn-pagar:hover{background-color: #3e8e41}
+
+.boton:active, .btnBuscar:active, .restaCantidad:active, .sumaCantidad:active, .btn-pagar:active{
+  background-color: #3e8e41;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  box-shadow: 1px 2px  #999;
+}
+
+.btn-eliminar:active{
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  box-shadow: 1px 2px  #999;
+}
+.btn-eliminar{
+  margin-left: 20px;
+}
+
+
+.card {
+  /* Establece una escala inicial del 1 (sin zoom) */
+  transform: scale(1);
+  /* Transición suave para un efecto de zoom gradual */
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  /* Aplica un zoom al pasar el puntero del mouse */
+  transform: scale(1.1);
+  z-index: 2000;
+}
+
+.carritoImagen{
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectorCantidad{
+  display: flex;
+  justify-content:center;
+}
+
+.selectorCantidad, .carritoImagen{
+  display: flex;
+  align-items: center;
+  padding: 0px 2px;    
+  /*display: flex;
+  justify-content: center;*/
+}
+
+.carritoCantidadItem input{
+  border:none;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  
+}
+
+.restaCantidad, .sumaCantidad{
+  background-color:#04AA6D;
+  border: none;
+  color: white;
+  height: 20px;
+  width: 20px;;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 50%;
   text-align: center;
 }
-.container-fluid p {
-  text-align: justify;
+
+
+
+.headerCarrito{
+  text-align: center;
+}
+
+.h2Carrito{
+  font-size: 14px;
+  text-align: center;
+  padding :5px;
+}
+
+.SectionCarro{
+  padding: 5px 2px 5px 0px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.contenedorCarro{
+  padding: 5px 2px 5px 0px;
+  border: 1px solid #ccc;
+  height:30%;
+}
+
+.headerCarrito{
+  font-size: 14px;
 }
 
 .logo {
@@ -22,7 +169,6 @@
   padding: 2px;
   border-radius: 40px;
   border: 2px solid white;
-  /* rgba(40, 40, 40, 0.852);*/
 }
 
 /*inicia Código efecto logo*/
@@ -60,56 +206,12 @@
     color: hwb(36 97% 1%);
   }
   /*Fin - destaca con un bloque las opciones del menu hamburguesa*/
-  /*Frases inicia*/
-  .frases {
-    padding: 60px 0px 60px 0px;
-  }
-  /*Frases final*/
-}
-@media only screen and (min-width: 576px) {
-  /*Frases inicia*/
-  .frases {
-    padding: 60px 10px 60px 10px;
-  }
-  /*Frases final*/
-}
-/*Contiene estilos que se utiliza fuertemente a la estructura web, etiquetas semanticas.*/
-/*Inicio: Variables que se utilizan en la pagina layauts*/
-/*Final: Variables que se utilizan en la pagina layauts*/
-body {
-  width: 98%;
-  /*max-width: 1000px;*/
-  margin: 5px auto;
-  /* background-color: $background_body;*/
-  background-image: linear-gradient(rgb(46, 43, 43)); /*$background_body;*/
-  color: #000;
-  font-family: serif, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
-  text-shadow: 1px 1px 1px black;
-  /* background: radial-gradient(circle, rgb(46, 43, 43),$background_body,rgb(108, 129, 66), rgb(77, 42, 36),$background_body);*/
-  background: black;
 }
 
-/*
-header{
-    text-align: center;
-    padding: 12px;
-    .temas{
-        z-index: 1000;
-        background-color:$background_header;
-        position:fixed;
-        left: 0px;
-        top: 0px;
-        padding:.3em;
-        color:$color_header;
-        line-height: 1;
-    }
-}
-*/
 .footer {
   height: 110px;
   background-color: #040D12;
   padding: 20px;
-  /*border: $color-borde;1px solid white;*/
   border: 1px solid white !important;
   color: orange;
   text-align: right;
@@ -141,209 +243,3 @@ header{
   display: flex;
   justify-content: center;
 }
-
-/*Inicia estilos index*/
-/*Inicio: Variables que se utilizan en la pagina index*/
-/*Fin: Variables que se utilizan en la pagina index*/
-.contenido_ppal {
-  margin: 0px;
-  text-align: justify;
-  background-image: url(../Imagen/giordano_bruno_biografia.jpg);
-  background-size: cover;
-  background-position: top;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  border: 1px solid white !important;
-}
-
-.aside {
-  border: 1px solid white !important;
-  background-color: rgb(46, 43, 43);
-  background: radial-gradient(circle, #140e2b, #00205b, #004d92, #0081b8, #00b4fc);
-}
-
-.sub-contenido {
-  margin: 0px;
-  background-color: rgba(51, 51, 51, 0.562);
-  color: white;
-  border-radius: 10px;
-  padding: 0px 10px 10px 10px;
-}
-
-p.Letra-capital::first-letter {
-  font-size: 5em;
-  /*font-family:serif;*/
-  margin: 8px;
-  float: left;
-}
-
-.sub-contenido2 {
-  margin: 0px;
-  color: white;
-  margin-top: 10px;
-}
-
-.img-aside1 {
-  background-image: url(../Imagen/Fondos_de_Galaxia.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-  border-radius: 2%;
-}
-
-.img-aside2 {
-  background-image: url(../Imagen/muerte_GB.jpg);
-  background-size: cover;
-  height: 200px;
-  border-radius: 2%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.cita {
-  margin: 0px;
-  background-color: rgba(51, 51, 51, 0.562);
-  border-radius: 10px;
-  padding: 5px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.cita .card {
-  /* Establece una escala inicial del 1 (sin zoom) */
-  transform: scale(1);
-  /* Transición suave para un efecto de zoom gradual */
-  transition: transform 0.3s ease;
-}
-.cita .card:hover {
-  /* Aplica un zoom del 150% al pasar el puntero del mouse */
-  transform: scale(1.1);
-  z-index: 2000;
-}
-
-.card-body {
-  background: rgb(46, 43, 43);
-  color: white;
-}
-
-.fondo {
-  margin: 0px;
-  border: 1px solid white !important;
-  text-align: justify;
-  background-image: url(../Imagen/giordano_bruno_biografia.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-/*Final estilos index*/
-/*Estilos contacto inicio*/
-/*INICIO: Variables que se utilizan en la pagina contacto*/
-/*FIN: Variables que se utilizan en la pagina contacto*/
-.form-contacto {
-  background: #040D12;
-  border: 1px solid white;
-}
-
-.contacto .formulario {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #040D12;
-}
-
-.contacto .imagen {
-  /* overflow: hidden;*/
-  border: 1px solid white !important;
-  background-image: url(../Imagen/imagen_contacto2.jpg);
-  background-size: cover;
-  background-position: top;
-}
-
-/*Estilos contacto fin*/
-/*Estilos Frases inicia*/
-/*Inicio: Variables que se utilizan en la pagina frasescitas*/
-/*Fin: Variables que se utilizan en la pagina frasescitas*/
-.precamino {
-  /* overflow: hidden;*/
-  background-image: url(../Imagen/precamino.jpg);
-  background-size: cover;
-  background-position: top;
-  border: 1px solid var(--color_borde) !important;
-}
-
-@font-face {
-  font-family: The California;
-  src: url(../fuentes/TheCalifornia.ttf);
-}
-.frases {
-  padding: 30px;
-}
-.frases h1, .frases h2,
-.frases p {
-  font-family: The California;
-  font-size: 50px;
-  text-shadow: 1px 2px 0px white;
-}
-.frases .fc {
-  /* escala inicial del 1 (sin zoom) */
-  transform: scale(1);
-  /* Transición suave para un efecto de zoom gradual */
-  transition: transform 0.3s ease;
-}
-.frases .fc:hover {
-  /* Aplica un zoom al pasar el puntero del mouse */
-  transform: scale(1.04);
-  z-index: 2000;
-}
-
-/*Estilos Frases fin*/
-/*Estilos multimedia inicio*/
-/*Inicio: Variables que se utilizan en la pagina multimedia*/
-/*Fin: Variables que se utilizan en la pagina multimedia*/
-.contenedor_carrusel {
-  margin-top: 10px;
-  border: 1px solid white !important;
-}
-
-.embed-responsive {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-
-iframe {
-  position: absolute;
-  /*top: 0;
-  left: 0;*/
-  width: 100%;
-  height: 100%;
-}
-
-.parrafo {
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid white !important;
-}
-.parrafo h1 {
-  text-align: center;
-}
-.parrafo p {
-  text-align: justify;
-}
-
-/*Estilos multimedia fin*/
-/*Estilos noticias inicio*/
-/*Inicio: Variables que se utilizan en la pagina noticias*/
-/*Fin: Variables que se utilizan en la pagina noticias*/
-.noticia {
-  border: 1px solid white !important;
-}
-.noticia .border {
-  border: 1px solid white !important;
-}
-
-/*Estilos noticias fin*/
-
-/*# sourceMappingURL=estilos.css.map */

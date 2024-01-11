@@ -1,6 +1,7 @@
 import Logo from "../imagen/GiordanoBruno_logo.jpg";
+import CartWidget from "./CartWidget ";
 
-const Header = () => {
+const Navbar = () => {
     return (
         <header className="navbar navbar-expand-sm border border-black-subtle navbar-dark">
             <div className="container-fluid"> 
@@ -14,20 +15,20 @@ const Header = () => {
                             <a className="nav-link" href="#">Inicio</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="pages/multimedia.html">Multimedia</a>
+                            <a className="nav-link" href="#">Multimedia</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="pages/noticias.html">Noticias</a>
+                            <a className="nav-link" href="#">Noticias</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="pages/frasescitas.html">Frases </a> </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="pages/contacto.html">Contacto </a> </li>
+                            <a className="nav-link" href="#">Contacto </a> </li>
+                        <li className="nav-item"><a className="nav-link carrito-compra " href="#"><CartWidget /></a> </li>
                     </ul>
                 </div>
+                
         </div>
     </header>
     )
 }
 
-export default Header;
+export default Navbar;
