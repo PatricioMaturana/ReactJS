@@ -96,9 +96,9 @@ const Cargaproductos = () => {
             </div>
           </div>
         </div>
-      `;
+      ; 
 
-      cardGroup.appendChild(card);
+      cardGroup.appendChild(card); 
     });
 
     AgregarStorage();
